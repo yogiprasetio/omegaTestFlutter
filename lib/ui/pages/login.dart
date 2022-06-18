@@ -10,7 +10,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     // final userNameController = TextEditingController();
     // final passwordController = TextEditingController();
     TextEditingController userNameController = TextEditingController();
@@ -115,13 +115,13 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: size.height * 0.03),
+              SizedBox(height: 30),
               //TextFieldUsername
               inputUsername(),
-              SizedBox(height: size.height * 0.03),
+              SizedBox(height: 30),
               //TextFieldPassword
               inputPassword(),
-              SizedBox(height: size.height * 0.05),
+              SizedBox(height: 50),
               Container(
                 alignment: Alignment.centerRight,
                 margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
@@ -149,7 +149,7 @@ class LoginPage extends StatelessWidget {
                   child: Container(
                     alignment: Alignment.center,
                     height: 50.0,
-                    width: size.width * 0.5,
+                    width: 100,
                     decoration: new BoxDecoration(
                       borderRadius: BorderRadius.circular(80.0),
                       gradient: new LinearGradient(

@@ -2,7 +2,6 @@ part of 'pages.dart';
 
 class GeneralPage extends StatelessWidget {
   // const GeneralPage({Key? key}) : super(key: key);
-
   final String title;
   final Function onLogoButtonPressed;
   final Widget child;
@@ -53,6 +52,36 @@ class GeneralPage extends StatelessWidget {
                                     image: AssetImage(logo))),
                           ),
                           ) : SizedBox(),
+                          SizedBox(width: 60,),
+                          Container(
+                              alignment: Alignment.centerRight,
+                              margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                              child: RaisedButton(
+                                onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => DataList()));
+                                },
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(80.0)),
+                                textColor: thirdColor,
+                                padding: const EdgeInsets.all(0),
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  height: 50.0,
+                                  width: 100,
+                                  decoration: new BoxDecoration(
+                                    borderRadius: BorderRadius.circular(80.0),
+                                    color: fourthColor
+                                  ),
+                                  padding: const EdgeInsets.all(0),
+                                  child: Text(
+                                    "View Table User",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
                         ],
                       ),
                     ),
