@@ -29,9 +29,10 @@ class _DataListState extends State<DataList> {
         "http://172.20.10.5/flutter/list.php"
       ));
       if (response.statusCode == 200){
-        final data = jsonDecode(response.body);
+        final data = jsonDecode(response.body); //['data']
         setState(() {
           _get = data;
+          print(data);
         });
       }
     } catch (e){
@@ -41,7 +42,8 @@ class _DataListState extends State<DataList> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
+    return Scaffold(
+
       backgroundColor: 
             Colors.orange.shade200,
       body: _get.length != 0
@@ -64,17 +66,20 @@ class _DataListState extends State<DataList> {
                             child: Container(
                               //make 2 different height
                               constraints:
-                                  BoxConstraints(minHeight: (index % 2 + 1) * 85),
+                              BoxConstraints(minHeight: (index % 2 + 1) * 85),
+                                  // BoxConstraints(minHeight: (index % 1 + 4) * 85),
                               padding: EdgeInsets.all(15),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
                                     '${_get[index]['userid']}',
+                                    // 'id Doc = ${_get[index]['id_dokumen']}',
                                     style: TextStyle(color: Colors.black),
                                   ),
                                   SizedBox(height: 10),
                                   Text(
+                                    // 'keterangan Belanja = ${_get[index]['keterangan_belanja']}',
                                     '${_get[index]['nama']}',
                                     style: TextStyle(
                                       color: Colors.black,
@@ -85,12 +90,22 @@ class _DataListState extends State<DataList> {
                                   SizedBox(height: 5,),
                                   Text(
                                     '${_get[index]['status']}',
+                                    // 'update at = ${_get[index]['updated_at']}',
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
+                                  // SizedBox(height: 5,),
+                                  // Text(
+                                  //   'instansi = ${_get[index]['instansi']['nama_instansi']}',
+                                  //   style: TextStyle(
+                                  //     color: Colors.black,
+                                  //     fontSize: 15,
+                                  //     fontWeight: FontWeight.bold,
+                                  //   ),
+                                  // ),
                                 ],
                               ),
                             ),
